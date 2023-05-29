@@ -1,6 +1,15 @@
 import { Request, Response } from 'express'
 import { CoordinateModel } from '../models/coordinateModel'
 
+export const getCoordinates = async (req: Request, res: Response) => {
+  try {
+    const coordinates = await CoordinateModel.find({})
+    res.status(200).json({ coordinates })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const coordinate = async (req: Request, res: Response) => {
   const { coordinates } = req.body
   try {
