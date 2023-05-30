@@ -4,6 +4,7 @@ import { CoordinateModel } from '../models/coordinateModel'
 export const getCoordinates = async (req: Request, res: Response) => {
   try {
     const coordinates = await CoordinateModel.find({})
+    console.log(coordinates)
     res.status(200).json({ coordinates })
   } catch (error) {
     console.log(error)
