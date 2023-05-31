@@ -6,6 +6,7 @@ export const getCoordinates = async (req: Request, res: Response) => {
     const coordinates = await CoordinateModel.find({})
     console.log(coordinates)
     res.status(200).json({ coordinates })
+    return { output: 'coordinates' }
   } catch (error) {
     console.log(error)
   }
