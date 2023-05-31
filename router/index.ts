@@ -3,7 +3,7 @@ import express from 'express'
 const router = express.Router()
 
 router.post('/webhook', async (req, res) => {
-  console.log('req.body', req)
+  console.log('req.body', res)
   function webhook() {
     return { output: 'test', skillData: 'test' }
   }
