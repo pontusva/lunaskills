@@ -2,7 +2,7 @@ import express from 'express'
 
 const router = express.Router()
 
-router.post('/', (req, res) => {
+router.post('/webhook', (req, res) => {
   console.log(req)
   return { output: 'hello' }
 })
