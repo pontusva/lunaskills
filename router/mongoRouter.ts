@@ -7,7 +7,7 @@ import {
 
 const mongoRouter = express.Router()
 
-mongoRouter.get('/', getCoordinates)
+mongoRouter.get('/webhook', getCoordinates)
 mongoRouter.post('/coordinate', coordinate)
 mongoRouter.delete('/coordinate', deleteAllCoordinates)
 
