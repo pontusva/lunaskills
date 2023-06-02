@@ -5,10 +5,10 @@ import { writeNoteToDb } from '../skills/skills'
 const router = express.Router()
 
 router.post('/webhook', async (req, res) => {
-  // if (req.body.behaviour.name === 'notes') {
-  writeNoteToDb(req, res)
-  // }
-  console.log('inside notes', req.body.behaviour.name)
+  if (req.body.behaviour.name === 'note') {
+    writeNoteToDb(req, res)
+    console.log('inside notes', req.body.behaviour.name)
+  }
 
   // try {
   //   const coordinates = await CoordinateModel.find({})
