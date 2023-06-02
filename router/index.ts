@@ -6,7 +6,7 @@ const router = express.Router()
 router.post('/webhook', async (req, res) => {
   try {
     const coordinates = await CoordinateModel.find({})
-    console.log(coordinates)
+    console.log(req.body)
     res.send({ output: coordinates[0].coordinates })
   } catch (error) {
     console.log(error)

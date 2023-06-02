@@ -8,7 +8,7 @@ const port = 8080
 
 app.use(express.json())
 app.use('/', router)
-app.use('/webhook', mongoRouter)
+// app.use('/webhook', mongoRouter)
 
 connectDB().then(() => {
   app.listen(port, () => {
