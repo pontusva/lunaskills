@@ -7,7 +7,7 @@ export const writeNoteToDb = async (req: Request, res: Response) => {
       note: req.body.input,
     })
     res.send({ output: 'Your note has been added to the database!' })
-    res.status(200).json({ createNote })
+    // res.status(200).json({ createNote })
   } catch (error) {
     console.log(error)
   }
