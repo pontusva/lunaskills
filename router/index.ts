@@ -7,9 +7,9 @@ const router = express.Router()
 router.post('/webhook', async (req, res) => {
   if (req.body.behaviour === 'notes') {
     writeNoteToDb(req, res)
+    console.log('inside notes', req.body)
   }
 
-  console.log(req.body)
   // try {
   //   const coordinates = await CoordinateModel.find({})
   //   res.send({ output: coordinates[0].coordinates })

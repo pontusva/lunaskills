@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 export const Note = new mongoose.Schema({
-  input: {
+  note: {
     type: String,
     required: true,
   },
