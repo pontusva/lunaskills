@@ -20,7 +20,7 @@ export const readNoteFromDb = async (req: Request, res: Response) => {
   try {
     const readNote = await NotesModel.find().sort({ _id: -1 }).limit(3)
     res.json({
-      output: readNote.map((note) => note.note),
+      output: readNote.map((note) => note.note).join(' '),
     })
   } catch (error) {
     console.log(error)
