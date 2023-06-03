@@ -32,5 +32,5 @@ export const readNoteFromDb = async (req: Request, res: Response) => {
 export const analyzeNotes = async (req: Request, res: Response) => {
   console.log('inside analyze notes', req.body.input)
 
-  res.status(200)
+  res.status(200).json({ done: 'done' })
 }
