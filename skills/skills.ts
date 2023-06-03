@@ -20,9 +20,9 @@ export const readNoteFromDb = async (req: Request, res: Response) => {
   try {
     const readNote = await NotesModel.find().sort({ _id: -1 }).limit(3)
     res.send({
-      data: readNote,
-      output: readNote,
+      output: "sure, here's your notes",
     })
+    console.log(readNote)
     // return res.status(200).json({ readNote })
   } catch (error) {
     console.log(error)
