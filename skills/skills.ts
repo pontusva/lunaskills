@@ -20,9 +20,17 @@ export const readNoteFromDb = async (req: Request, res: Response) => {
   try {
     const readNote = await NotesModel.find().sort({ _id: -1 }).limit(3)
     res.json({
-      output: readNote.map((note) => note.note).join(' '),
+      output:
+        'What do you think of these notes? ' +
+        readNote.map((note) => note.note).join(' '),
     })
   } catch (error) {
     console.log(error)
   }
+}
+
+export const analyzeNotes = async (req: Request, res: Response) => {
+  console.log('inside analyze notes', req.body.input)
+
+  res.status(200)
 }
