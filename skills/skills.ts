@@ -6,8 +6,11 @@ export const writeNoteToDb = async (req: Request, res: Response) => {
     const createNote = await NotesModel.create({
       note: req.body.input,
     })
-    // res.send({ output: 'Your note has been added to the database!' })
-    res.status(200).json({ createNote })
+    res.send({
+      output:
+        'I understand your request and will update the database accordingly. Is there anything else I can help you with?',
+    })
+    return res.status(200).json({ createNote })
   } catch (error) {
     console.log(error)
   }
