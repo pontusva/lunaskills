@@ -10,6 +10,7 @@ router.post('/webhook', async (req, res) => {
   } else if (req.body.behaviour.name === 'readNote') {
     readNoteFromDb(req, res)
   }
+
   console.log('test')
 })
 
