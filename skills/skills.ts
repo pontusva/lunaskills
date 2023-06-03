@@ -21,6 +21,7 @@ export const readNoteFromDb = async (req: Request, res: Response) => {
     const readNote = await NotesModel.find().sort({ _id: -1 }).limit(3)
     res.send({
       data: readNote,
+      output: readNote,
     })
     // return res.status(200).json({ readNote })
   } catch (error) {

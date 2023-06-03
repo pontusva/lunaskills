@@ -11,6 +11,7 @@ router.post('/webhook', async (req, res) => {
     readNoteFromDb(req, res)
     console.log('inside readNote', req.body)
   }
+  console.log('test')
 })
 
 export default router
