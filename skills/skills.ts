@@ -10,7 +10,20 @@ export const writeNoteToDb = async (req: Request, res: Response) => {
       output:
         'I understand your request and will update the database accordingly. Is there anything else I can help you with?',
     })
-    return res.status(200).json({ createNote })
+    // return res.status(200).json({ createNote })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const readNoteFromDb = async (req: Request, res: Response) => {
+  try {
+    const readNote = await NotesModel.find({})
+    res.send({
+      output:
+        'I understand your request and will read the database accordingly. Is there anything else I can help you with?',
+    })
+    return res.status(200).json({ readNote })
   } catch (error) {
     console.log(error)
   }
