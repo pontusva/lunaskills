@@ -7,7 +7,7 @@ router.post('/webhook', async (req, res) => {
   if (req.body.behaviour.name === 'note') {
     writeNoteToDb(req, res)
     console.log('inside notes', req.body)
-  } else if (req.body.behavior.name === 'readNote') {
+  } else if (req.body.behaviour.name === 'readNote') {
     readNoteFromDb(req, res)
     console.log('inside readNote', req.body)
   }
