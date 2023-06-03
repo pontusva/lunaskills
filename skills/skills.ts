@@ -18,12 +18,11 @@ export const writeNoteToDb = async (req: Request, res: Response) => {
 
 export const readNoteFromDb = async (req: Request, res: Response) => {
   try {
-    const readNote = await NotesModel.find({})
+    const readNote = await NotesModel.find().sort({ _id: -1 }).limit(3)
     res.send({
-      output:
-        'I understand your request and will read the database accordingly. Is there anything else I can help you with?',
+      data: readNote,
     })
-    return res.status(200).json({ readNote })
+    // return res.status(200).json({ readNote })
   } catch (error) {
     console.log(error)
   }
